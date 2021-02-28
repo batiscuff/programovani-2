@@ -1,5 +1,5 @@
-<h1 align="center">Programování 2</h1>
-<p align="center">
+<h1 align="center">
+    Programování 2<br/>
     <a href="https://github.com/batiscuff/programovani_2/blob/main/LICENSE" target="_blank">
         <img alt="License: GPLv3" src="https://img.shields.io/badge/License-GPLv3-green.svg" />
     </a>
@@ -9,17 +9,17 @@
     </a href="https://github.com/batiscuff/programovani_2" target="_blank">
         <img alt="Build with love <3" src="https://img.shields.io/badge/build%20with-%F0%9F%92%9D-green" />
     </a>
-</p>
+</h1>
 
 
-<h2>Použití</h2>
-<code>
-sudo apt update && sudo apt upgrade <br />
-sudo apt-get install python3 python3-pip <br />
-git clone https://github.com/batiscuff/programovani_2 <br />
-cd programovani_2 <br />
-pip3 install -r requirements.txt <br />
-</code>
+## Použití (na Linuxu)
+```sh
+sudo apt update && sudo apt upgrade 
+sudo apt-get install python3 python3-pip
+git clone https://github.com/batiscuff/programovani_2
+cd programovani_2
+pip3 install -r requirements.txt
+```
 
 
 <h2>Licence</h2>
