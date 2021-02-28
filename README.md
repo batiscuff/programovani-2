@@ -13,13 +13,14 @@
 
 
 <h2>Použití</h2>
-```sh
-sudo apt update && sudo apt upgrade
-sudo apt-get install python3 python3-pip
-git clone https://github.com/batiscuff/programovani_2
-cd programovani_2
-pip3 install -r requirements.txt
-```
+<code>
+sudo apt update && sudo apt upgrade <br />
+sudo apt-get install python3 python3-pip <br />
+git clone https://github.com/batiscuff/programovani_2 <br />
+cd programovani_2 <br />
+pip3 install -r requirements.txt <br />
+</code>
+
 
 <h2>Licence</h2>
 <p>Tento projekt podléhá licenci
