@@ -6,7 +6,7 @@ Tip: Pro testování použijte několik malých a jednoduchých textů
 >>> mujBowModel = FolderToBoW("C:/Data/Texty/Svejk/")
 """
 from pathlib import Path
-from utils import load_file, save_file, remove_punctuation
+from utils import load_file, remove_punctuation, save_file
 
 
 fname = "bag_of_words_lesson5.txt"
@@ -71,22 +71,23 @@ def save_result(vectorized_list: list, global_vocabulary: set, texts: list):
     vocabulary_string = f"Global Vocabulary: {voc_list}\n"
     texts_string = f"Texts: {texts_list}\n"
 
-    info = (
-        prepared_vec_string,
-        vocabulary_string,
-        texts_string
-    )
-
+    info = (prepared_vec_string, vocabulary_string, texts_string)
     save_file(output_file, (f"{string}\n" for string in info))
 
 
 def folder_to_bow():
     cleaned_texts = get_cleaned_texts()
-    print(f"Počet nahraných souborů: {len(cleaned_texts)}",
-          f"Texty jsou načtené a zpracované!", sep="\n")
+    print(
+        f"Počet nahraných souborů: {len(cleaned_texts)}",
+        f"Texty jsou načtené a zpracované!",
+        sep="\n",
+    )
     global_vocabulary = create_tokens_set(cleaned_texts)
-    print(f"Globální slovník byl vytvořen!",
-          f"Počet tokenů ve slovníku: {len(global_vocabulary)}", sep="\n")
+    print(
+        f"Globální slovník byl vytvořen!",
+        f"Počet tokenů ve slovníku: {len(global_vocabulary)}",
+        sep="\n",
+    )
     vectorized = vectorize(cleaned_texts, global_vocabulary)
     save_result(vectorized, global_vocabulary, cleaned_texts)
     print(f"Data byla uložena do souboru {fname}")
