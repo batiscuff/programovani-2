@@ -41,10 +41,6 @@ def vectorize(texts, global_vocabulary):
     return vectors
 
 
-def main():
-    global_vocabulary = create_tokens_set(texts)
-    vectorized = vectorize(texts, global_vocabulary)
-    print(global_vocabulary, vectorized, sep="\t")
-
-
-main()
+global_vocabulary = create_tokens_set(texts)
+vectorized = vectorize(texts, global_vocabulary)
+print(global_vocabulary, vectorized, sep="\t")
