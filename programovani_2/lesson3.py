@@ -11,8 +11,8 @@ texts = [
 def string_preparation(string):
     """Čisti řetězec a vrátí množinu(set) ze slov"""
     cleaned_string = remove_punctuation(string)
-    data_set = set(cleaned_string.lower().split())
-    return data_set
+    words_set = set(cleaned_string.lower().split())
+    return words_set
 
 
 def create_tokens_set(texts):
@@ -20,8 +20,8 @@ def create_tokens_set(texts):
     tokens_set = set()
     for dictionary in texts:
         string = dictionary.get("data")
-        data_set = string_preparation(string)
-        tokens_set.update(data_set)
+        words_set = string_preparation(string)
+        tokens_set.update(words_set)
     return tokens_set
 
 
