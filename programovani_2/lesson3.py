@@ -1,4 +1,3 @@
-from icecream import ic
 from utils import remove_punctuation
 
 
@@ -45,7 +44,7 @@ def vectorize(texts: list, global_vocabulary: set) -> list:
 def main() -> None:
     global_vocabulary = create_tokens_set(texts)
     vectorized = vectorize(texts, global_vocabulary)
-    ic(global_vocabulary, vectorized)
+    print(global_vocabulary, vectorized, sep="\t")
 
 
 if __name__ == "__main__":
