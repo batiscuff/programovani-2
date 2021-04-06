@@ -14,19 +14,18 @@ def dot(vectors1: list, vectors2: list) -> int:
     return sum(result)
 
 
-def cosine_distance(sdv1: list, sdv2: list, vdot: int) -> float:
-    result = sdv1 * sdv2  # sdv - sqrt dot vectors
-    distance = 1 - vdot / result
+def cosine_distance(A: list, B: list) -> float:
+    vectors_dot = dot(A, B)
+    sqrt_dot_vectors1 = sqrt(dot(A, A))
+    sqrt_dot_vectors2 = sqrt(dot(B, B))
+    
+    result = sqrt_dot_vectors1 * sqrt_dot_vectors2
+    distance = 1 - vectors_dot / result
     return round(distance, 2)
 
 
 def main() -> None:
-    vectors_dot = dot(A, B)
-    sqrt_dot_vectors1 = sqrt(dot(A, A))
-    sqrt_dot_vectors2 = sqrt(dot(B, B))
-    cos_dist = cosine_distance(
-        sqrt_dot_vectors1, sqrt_dot_vectors2, vectors_dot
-    )
+    cos_dist = cosine_distance(A, B)
     ic(cos_dist)
 
 
