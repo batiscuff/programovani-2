@@ -8,14 +8,14 @@ texts = [
 ]
 
 
-def string_preparation(string: str) -> set:
+def string_preparation(string):
     """Čisti řetězec a vrátí množinu(set) ze slov"""
     cleaned_string = remove_punctuation(string)
     data_set = set(cleaned_string.lower().split())
     return data_set
 
 
-def create_tokens_set(texts: list) -> set:
+def create_tokens_set(texts):
     """Vytvoří množinu tokenů na základě textu v slovniku["data"]"""
     tokens_set = set()
     for dictionary in texts:
@@ -25,7 +25,7 @@ def create_tokens_set(texts: list) -> set:
     return tokens_set
 
 
-def vectorize(texts: list, global_vocabulary: set) -> list:
+def vectorize(texts, global_vocabulary):
     """Vytvoří model Bag-of-Words založený na textu a globálním slovníku"""
     vectors = []
     for text_dict in texts:
@@ -41,11 +41,10 @@ def vectorize(texts: list, global_vocabulary: set) -> list:
     return vectors
 
 
-def main() -> None:
+def main():
     global_vocabulary = create_tokens_set(texts)
     vectorized = vectorize(texts, global_vocabulary)
     print(global_vocabulary, vectorized, sep="\t")
 
 
-if __name__ == "__main__":
-    main()
+main()
