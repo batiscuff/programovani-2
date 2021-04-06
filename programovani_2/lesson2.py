@@ -1,4 +1,4 @@
-from icecream import ic
+from icecream import ic  # nebo from pprint import pprint
 from utils import load_file, remove_punctuation
 
 
@@ -33,8 +33,8 @@ def calc_ttr_from_dict(data: dict) -> float:
 def main():
     string = load_file(f"{fname}.txt")
     frequence = get_tokens_freq(string)
-    ic(frequence)
-    ic(calc_ttr_from_dict(frequence))
+    ic(frequence)  # pprint(frequence)
+    ic(calc_ttr_from_dict(frequence))  # pprint(calc_ttr_from_dict(frequence))
 
 
 if __name__ == "__main__":
