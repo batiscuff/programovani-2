@@ -1,10 +1,3 @@
-"""
-5) Vytvořte funkci FolderToBoW, která načte všechny TXT soubory ze 
-    zadaného adresáře a vytvoří z nich bag-of-words model.
-
-Tip: Pro testování použijte několik malých a jednoduchých textů
->>> mujBowModel = FolderToBoW("C:/Data/Texty/Svejk/")
-"""
 from pathlib import Path
 from utils import load_file, remove_punctuation, save_file
 
