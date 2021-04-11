@@ -60,9 +60,9 @@ def save_result(vectorized_list: list, global_vocabulary: set, texts: list):
     voc_list = [f"{n}" for n in global_vocabulary]
     texts_list = [f"{n}" for n in texts]
 
-    prepared_vec_string = f"Prepared vectors: {prepared_vec_list}\n"
-    vocabulary_string = f"Global Vocabulary: {voc_list}\n"
-    texts_string = f"Texts: {texts_list}\n"
+    prepared_vec_string = f"Prepared vectors: {' '.join(prepared_vec_list)}"
+    vocabulary_string = f"Global Vocabulary: {voc_list}"
+    texts_string = f"Texts: {' '.join(texts_list)}"
 
     info = (prepared_vec_string, vocabulary_string, texts_string)
     save_file(output_file, (f"{string}\n" for string in info))
