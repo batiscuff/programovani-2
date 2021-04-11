@@ -70,17 +70,11 @@ def save_result(vectorized_list: list, global_vocabulary: set, texts: list):
 
 def folder_to_bow():
     cleaned_texts = get_cleaned_texts()
-    print(
-        f"Počet nahraných souborů: {len(cleaned_texts)}",
-        f"Texty jsou načtené a zpracované!",
-        sep="\n",
-    )
+    print(f"Počet nahraných souborů: {len(cleaned_texts)}",
+          f"Texty jsou načtené a zpracované!", sep="\n")
     global_vocabulary = create_tokens_set(cleaned_texts)
-    print(
-        f"Globální slovník byl vytvořen!",
-        f"Počet tokenů ve slovníku: {len(global_vocabulary)}",
-        sep="\n",
-    )
+    print(f"Globální slovník byl vytvořen!",
+          f"Počet tokenů ve slovníku: {len(global_vocabulary)}", sep="\n")
     vectorized = vectorize(cleaned_texts, global_vocabulary)
     save_result(vectorized, global_vocabulary, cleaned_texts)
     print(f"Data byla uložena do souboru {fname}")

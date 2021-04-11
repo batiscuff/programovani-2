@@ -11,7 +11,7 @@ def load_file(f: Union[bytes, str]) -> str:
     if hasattr(f, "read"):
         return f.read()
     elif isinstance(f, str):
-        with open(f) as infile:
+        with open(f, encoding="utf-8") as infile:
             return infile.read()
     else:
         raise ValueError(
@@ -22,7 +22,7 @@ def load_file(f: Union[bytes, str]) -> str:
 def save_file(fname: str, data: Union[Iterable, str]) -> None:
     """Uloží řetězec nebo jiný iterovatelný objekt (list, set, tuple, atd.)
     do souboru"""
-    with open(fname, "w+") as f:
+    with open(fname, "w+", encoding="utf-8") as f:
         if isinstance(data, str):
             f.write(data)
         elif isinstance(data, Iterable):
