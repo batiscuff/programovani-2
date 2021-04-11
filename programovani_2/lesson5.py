@@ -29,7 +29,7 @@ def create_tokens_set(cleaned_texts: list) -> set:
     for text in cleaned_texts:
         filtered_text = set(text)  # filtruju při pomoci setu
         tokens.update(filtered_text)
-    return tokens
+    return sorted(tokens)
 
 
 def get_cleaned_texts() -> list:
@@ -47,10 +47,7 @@ def vectorize(cleaned_texts: list, global_vocabulary: set) -> list:
     for text in cleaned_texts:
         sent_vec = []
         for token in global_vocabulary:
-            if token in text:
-                sent_vec.append(1)
-            else:
-                sent_vec.append(0)
+            sent_vec.append(1 if token in text else 0)
         vectors.append(sent_vec)
     return vectors
 
