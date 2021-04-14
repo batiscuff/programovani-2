@@ -1,8 +1,9 @@
+import json
 from pathlib import Path
 from utils import load_file, remove_punctuation, save_file
 
 
-fname = "bag_of_words_lesson5.txt"
+fname = "bag_of_words_lesson5.json"
 current_dir = Path.cwd()
 files_dir = current_dir / "files_lesson5"  # programovani_2/files_lesson5
 files = list(files_dir.glob("*.txt"))  # seznam všech souborů .txt ve složce
@@ -53,16 +54,14 @@ def vectorize(cleaned_texts: list, global_vocabulary: set) -> list:
 
 
 def save_result(vectorized_list: list, global_vocabulary: set, texts: list):
-    prepared_vec_list = [f"{element}" for element in vectorized_list]
-    voc_list = [f"{n}" for n in global_vocabulary]
-    texts_list = [f"{n}" for n in texts]
+    result = [
+        {"Vectors": vectorized_list},
+        {"Global Vocabulary": global_vocabulary},
+        {"Texts": texts}
+    ]
 
-    prepared_vec_string = f"Prepared vectors: {' '.join(prepared_vec_list)}"
-    vocabulary_string = f"Global Vocabulary: {voc_list}"
-    texts_string = f"Texts: {' '.join(texts_list)}"
-
-    info = (prepared_vec_string, vocabulary_string, texts_string)
-    save_file(output_file, (f"{string}\n" for string in info))
+    with open(output_file, "w+", encoding="utf-8") as of:
+        json.dump(result, of, ensure_ascii=False,)
 
 
 def folder_to_bow():
