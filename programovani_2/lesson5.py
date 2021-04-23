@@ -1,7 +1,3 @@
-"""
-Создайте функцию folder_to_bow которая загрузит все файлы.txt из
-указаного адресса и сделает с них "мешок слов" модель.
-"""
 import json
 from pathlib import Path
 from utils import load_file, remove_punctuation, save_file
@@ -70,7 +66,7 @@ def save_result(vectorized_dict: dict, global_vocabulary: list, texts: dict):
 
 
 def folder_to_bow(folder) -> tuple:
-    files = [str(_file) for _file in files_dir.glob("*.txt")]
+    files = [str(_file) for _file in folder.glob("*.txt")]
     cleaned_texts = get_cleaned_texts(files)
     global_vocabulary = create_tokens_list(cleaned_texts)
     vectorized = vectorize(cleaned_texts, global_vocabulary)
