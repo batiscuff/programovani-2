@@ -1,3 +1,8 @@
+"""
+Создайте функцию most_similar которая найдет из нее 
+наиболее похожий текст для указанного «мешка слов», 
+полученного с помощью задачи (5) и указанного имени файла.
+"""
 import json
 from pprint import pprint
 from pathlib import Path
@@ -18,15 +23,10 @@ def load_all_txt_files() -> dict:
     return texts
 
 
-def load_bow() -> tuple:
-    with open("bag_of_words_lesson5.json", encoding="utf-8") as f:
-        data = json.load(f)
-
-    vectors_list = data[0]["Vectors"]
-    global_vocabulary = data[1]["Global Vocabulary"]
-    return vectors_list, global_vocabulary
+def main():
+    texts = load_all_txt_files()
+    vectors_list, global_vocabulary = load_bow()
 
 
 if __name__ == "__main__":
-    texts = load_all_txt_files()
-    vectors_list, global_vocabulary = load_bow()
+    main()

@@ -1,25 +1,20 @@
 [
-    {
-        "Vectors": [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0],
-            [1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0],
-            [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-            [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1]
-        ]
-    }, 
-    {
-        "Global Vocabulary": [
-            "a", "buky", "chladné", "dobré", "dobrý", "dávno", "jako", "již", "karbolem", "kostelíček", "kávou", "lazaret", "mezi",
-            "mužstvím", "na", "nemocniční", "není", "nárazech", "nízkou", "něco", "odpočívá", "ohýbá", "pach", "pahorku", "prudký", 
-            "s", "silný", "stařenky", "stromy", "tabákem", "to", "v", "více", "vítr", "věží", "zahradě", "zavonělo", "zemi"
-        ]
-    }, 
-    {
-        "Texts": [
-            ["prudký", "vítr", "ohýbá", "v", "nárazech", "stromy", "v", "nemocniční", "zahradě"],
-            ["zavonělo", "to", "karbolem", "kávou", "tabákem", "a", "mužstvím", "dobrý", "a", "silný", "pach", "něco", "jako", "lazaret"],
-            ["na", "pahorku", "mezi", "buky", "kostelíček", "s", "věží", "nízkou"],
-            ["není", "více", "dobré", "stařenky", "dávno", "již", "odpočívá", "v", "chladné", "zemi"]
-        ]
-    }
+    {"Vectors": [
+        [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1], 
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0], 
+        [1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0], 
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    ], 
+    "Global Vocabulary": [
+        "a", "buky", "chladné", "dobré", "dobrý", "dávno", "jako", "již", "karbolem", "kostelíček", "kávou", "lazaret", 
+        "mezi", "mužstvím", "na", "nemocniční", "není", "nárazech", "nízkou", "něco", "odpočívá", "ohýbá", "pach", 
+        "pahorku", "prudký", "s", "silný", "stařenky", "stromy", "tabákem", "to", "v", "více", "vítr", "věží", "zahradě", 
+        "zavonělo", "zemi"
+    ], 
+    "Texts": [
+        ["není", "více", "dobré", "stařenky", "dávno", "již", "odpočívá", "v", "chladné", "zemi"], 
+        ["prudký", "vítr", "ohýbá", "v", "nárazech", "stromy", "v", "nemocniční", "zahradě"], 
+        ["zavonělo", "to", "karbolem", "kávou", "tabákem", "a", "mužstvím", "dobrý", "a", "silný", "pach", "něco", "jako", "lazaret"], 
+        ["na", "pahorku", "mezi", "buky", "kostelíček", "s", "věží", "nízkou"]
+    ]}
 ]
