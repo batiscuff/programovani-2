@@ -1,20 +1,25 @@
 [
-    {"Vectors": [
-        [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1], 
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0], 
-        [1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0], 
-        [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
-    ], 
-    "Global Vocabulary": [
-        "a", "buky", "chladné", "dobré", "dobrý", "dávno", "jako", "již", "karbolem", "kostelíček", "kávou", "lazaret", 
-        "mezi", "mužstvím", "na", "nemocniční", "není", "nárazech", "nízkou", "něco", "odpočívá", "ohýbá", "pach", 
-        "pahorku", "prudký", "s", "silný", "stařenky", "stromy", "tabákem", "to", "v", "více", "vítr", "věží", "zahradě", 
-        "zavonělo", "zemi"
-    ], 
-    "Texts": [
-        ["není", "více", "dobré", "stařenky", "dávno", "již", "odpočívá", "v", "chladné", "zemi"], 
-        ["prudký", "vítr", "ohýbá", "v", "nárazech", "stromy", "v", "nemocniční", "zahradě"], 
-        ["zavonělo", "to", "karbolem", "kávou", "tabákem", "a", "mužstvím", "dobrý", "a", "silný", "pach", "něco", "jako", "lazaret"], 
-        ["na", "pahorku", "mezi", "buky", "kostelíček", "s", "věží", "nízkou"]
-    ]}
+    {"Vectors": 
+        {"/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/nemcova_babichka.txt": 
+            [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1], 
+         "/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/chapek1.txt": 
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0], 
+         "/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/chapek2.txt": 
+            [1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0], 
+         "/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/kytice.txt": 
+            [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, 
+     "Global Vocabulary": 
+        ["a", "buky", "chladné", "dobré", "dobrý", "dávno", "jako", "již", "karbolem", "kostelíček", "kávou", "lazaret", "mezi", 
+         "mužstvím", "na", "nemocniční", "není", "nárazech", "nízkou", "něco", "odpočívá", "ohýbá", "pach", "pahorku", "prudký", 
+         "s", "silný", "stařenky", "stromy", "tabákem", "to", "v", "více", "vítr", "věží", "zahradě", "zavonělo", "zemi"], 
+     "Texts": 
+        {"/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/nemcova_babichka.txt":
+            ["není", "více", "dobré", "stařenky", "dávno", "již", "odpočívá", "v", "chladné", "zemi"], 
+         "/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/chapek1.txt": 
+            ["prudký", "vítr", "ohýbá", "v", "nárazech", "stromy", "v", "nemocniční", "zahradě"], 
+         "/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/chapek2.txt": 
+            ["zavonělo", "to", "karbolem", "kávou", "tabákem", "a", "mužstvím", "dobrý", "a", "silný", "pach", "něco", "jako", "lazaret"], 
+         "/home/batiscuff/Python_scripts/Univerzita_Palackeho/LEVEL 2/programovani_2/programovani_2/files_lesson5/kytice.txt": 
+            ["na", "pahorku", "mezi", "buky", "kostelíček", "s", "věží", "nízkou"]}
+    }
 ]

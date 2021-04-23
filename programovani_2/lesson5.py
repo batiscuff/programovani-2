@@ -13,11 +13,11 @@ output_file = str(current_dir / fname)
 files_dir = current_dir / "files_lesson5"  # programovani_2/files_lesson5
 
 
-def load_all_txt_files(files: list) -> list:
-    texts = []
+def load_all_txt_files(files: list) -> dict:
+    texts = {}
     for _file in files:
-        text = load_file(str(_file))  # protože _file je Path objekt
-        texts.append(text)
+        text = load_file(_file)
+        texts.update({_file: text})
     return texts
 
 
@@ -28,37 +28,39 @@ def clean_text(text: str) -> list:
     return text_list
 
 
-def get_cleaned_texts(texts: list) -> list:
-    loaded_txts = load_all_txt_files(texts)
+def get_cleaned_texts(files: list) -> dict:
+    loaded_txts = load_all_txt_files(files)
 
-    cleaned_texts_list = []
-    for txt in loaded_txts:
-        cleaned_text = clean_text(txt)
-        cleaned_texts_list.append(cleaned_text)
-    return cleaned_texts_list
+    cleaned_texts_dict = {}
+    for tname, text in loaded_txts.items():
+        cleaned_text = clean_text(text)
+        cleaned_texts_dict.update({tname: cleaned_text})
+    return cleaned_texts_dict
 
 
-def create_tokens_list(cleaned_texts: list) -> list:
+def create_tokens_list(cleaned_texts: dict) -> list:
+    texts_list = [text for tname, text in cleaned_texts.items()]
+    
     tokens = set()
-    for text in cleaned_texts:
+    for text in texts_list:
         filtered_text = set(text)  # filtruju při pomoci setu
         tokens.update(filtered_text)
     return sorted(tokens)
 
 
-def vectorize(cleaned_texts: list, global_vocabulary: set) -> list:
-    vectors = []
-    for text in cleaned_texts:
+def vectorize(cleaned_texts: dict, global_vocabulary: list) -> dict:
+    vectors = {}
+    for tname, text in cleaned_texts.items():
         sent_vec = []
         for token in global_vocabulary:
             sent_vec.append(1 if token in text else 0)
-        vectors.append(sent_vec)
+        vectors.update({tname: sent_vec})
     return vectors
 
 
-def save_result(vectorized_list: list, global_vocabulary: set, texts: list):
+def save_result(vectorized_dict: dict, global_vocabulary: list, texts: dict):
     result = [{
-        "Vectors": vectorized_list,
+        "Vectors": vectorized_dict,
         "Global Vocabulary": global_vocabulary,
         "Texts": texts
     }]
@@ -68,7 +70,7 @@ def save_result(vectorized_list: list, global_vocabulary: set, texts: list):
 
 
 def folder_to_bow(folder) -> tuple:
-    files = list(files_dir.glob("*.txt"))
+    files = [str(_file) for _file in files_dir.glob("*.txt")]
     cleaned_texts = get_cleaned_texts(files)
     global_vocabulary = create_tokens_list(cleaned_texts)
     vectorized = vectorize(cleaned_texts, global_vocabulary)

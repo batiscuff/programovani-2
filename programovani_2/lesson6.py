@@ -9,23 +9,9 @@ from pathlib import Path
 from utils import load_file, remove_punctuation
 
 
-current_dir = Path.cwd()
-files_dir = current_dir / "files_lesson6"
-files = list(files_dir.glob("*.txt"))
-files = [str(_file) for _file in files]
-
-
-def load_all_txt_files() -> dict:
-    texts = {}
-    for _file in files:
-        text = load_file(_file)
-        texts.update({_file: text})
-    return texts
-
-
 def main():
-    texts = load_all_txt_files()
-    vectors_list, global_vocabulary = load_bow()
+    current_dir = Path.cwd()
+    files_dir = current_dir / "files_lesson6"
 
 
 if __name__ == "__main__":
