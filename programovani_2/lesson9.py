@@ -4,7 +4,7 @@ data = [("pes", 1), ("pes", 2), ("pes", 3),
         ("kočka", 1), ("kočka", 2), ("kočka", 3)]
 
 
-def find_smallest(dataset: list) -> tuple:
+def find_smallest(dataset):
     categories = {_tuple[0]: 0 for _tuple in dataset}  # {'pes': 0, 'jezevec': 0, 'kočka': 0}
 
     for _tuple in dataset:
@@ -16,7 +16,7 @@ def find_smallest(dataset: list) -> tuple:
     return (smallest_category_name, smallest_category_value)
 
 
-def make_test_train(dataset: list, ratio: float) -> dict:
+def make_test_train(dataset):
     _, smallest_category_value = find_smallest(dataset)
     test_train_dataset = {
         "test":  [*filter(lambda x: x[1] == smallest_category_value, dataset)],
@@ -26,4 +26,4 @@ def make_test_train(dataset: list, ratio: float) -> dict:
 
 
 if __name__ == "__main__":
-    print(make_test_train(data, 2/3))
+    print(make_test_train(data))
