@@ -1,26 +1,28 @@
 from pathlib import Path
+from lesson4 import cosine_distance
 from lesson5 import folder_to_bow
 
 
-def most_similar(vectors: dict) -> str:
-    """Dostaneme součet vektorů(vsums), abychom jej
-    mohli použít k nalezení nejpodobnějšího textu"""
+def most_similar(bow, target_file_name):
+    bow_target_file = bow.get(target_file_name)
     
-    vsums = {}
-    for fname, vecs in vectors.items():
-        vsums.update({fname: sum(vecs)})
+    fname_dist_dict = {}
+    for file_name, vectors in bow.items():
+        cos_dist_result = cosine_distance(bow_target_file, vectors)
+        fname_dist_dict.update({file_name: cos_dist_result})
 
-    max_vsum = max([vsum for vsum in vsums.values()])
-    for fname, vsum in vsums.items():
-        if vsum == max_vsum:
-            return fname
+    return min(fname_dist_dict, key=fname_dist_dict.get)
 
 
 def main():
     current_dir = Path.cwd()
     files_dir = current_dir / "files_lesson6"
-    cleaned_texts, global_vocabulary, vectorized = folder_to_bow(files_dir)
-    print(most_similar(vectorized))
+    target_file_name = str(files_dir / "muj_text2.txt")
+
+    *_, bow_with_filenames = folder_to_bow(files_dir)
+    most_similar_text = most_similar(bow_with_filenames, target_file_name)
+    
+    print(most_similar_text)
 
 
 if __name__ == "__main__":
